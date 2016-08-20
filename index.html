@@ -7,11 +7,11 @@
     <link href="assets/css/reset.css" type="text/css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
-
-
     <link href="assets/css/style.css" rel="stylesheet" type="text/css">
-
-
+    
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAdC7G5MC9G8uxPUYabGBD93xL-lyzRu54&callback=initMap"></script>
+    
+    <script src="https://www.gstatic.com/firebasejs/3.2.1/firebase.js"></script>
 
 </head>
 
@@ -28,15 +28,28 @@
             <h1>Intro to the page</h1> Food is any substance[1] consumed to provide nutritional support for the body. It is usually of plant or animal origin, and contains essential nutrients, such as fats, proteins, vitamins, or minerals. The substance is ingested by an organism and assimilated by the organism's cells to provide energy, maintain life, or stimulate growth.
         </div>
 
-
-
-
-
         <div class="row button-row ">
+
+            <div class="col-sm-8 col-sm-offset-2 ingredient-search">
+                <div id="custom-search-input">
+                    <div class="input-group col-md-12">
+                        <input type="text" class="form-control input-lg text-value input-text" placeholder="Search Ingredient Nearby">
+                        <span class="input-group-btn">
+                        <button class="btn btn-info btn-lg ingredient-button" type="button">
+                        
+                            <i class="glyphicon glyphicon-search"></i>
+                        </button>
+                        
+                    </span>
+                    </div>
+
+                </div>
+
+            </div>
 
             <div class="add-product-col col-sm-8 col-sm-offset-2">
 
-                <h1 id="add-product-text" type="button" data-toggle="collapse" data-target="#user-form">Add Product</h1>
+                <h1 id="add-product-text" type="button" data-toggle="collapse" data-target="#user-form">Add Ingredient</h1>
 
 
                 <div class="panel panel-default collapse " id="user-form">
@@ -46,7 +59,7 @@
                     <div class="panel-body">
 
                         <form role="form">
-                            
+
                             <div class="form-group">
                                 <label for="text">Ingredient</label>
                                 <input type="text" class="form-control" id="ingredient">
@@ -55,9 +68,9 @@
                                 <label for="text">Location</label>
                                 <input type="text" class="form-control" id="location">
                             </div>
-                            
 
-                            <button type="submit" class="btn btn-default" id="submitMe">Submit</button>
+
+                            <button type="button" class="btn btn-default" id="submitMe" onclick="codeAddress()">Submit</button>
                         </form>
 
                     </div>
@@ -65,33 +78,20 @@
 
             </div>
 
-
-        </div>
-
-        <div class="row button-row ">
             <div class="get-product-col col-sm-8 col-sm-offset-2">
 
-                <h1 id="get-product-text" type="button" data-toggle="collapse" data-target="#map">Get Product</h1>
+                <h1 id="get-product-text" type="button" data-toggle="collapse" data-target="#map">Get Ingredient</h1>
 
-                <div id="map" class="collapse">
+                <div id="map" class="collapse" >
 
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed deiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                 </div>
-                
+
             </div>
-
-
-
-
-
-
-
-
         </div>
 
-
-
-        <!--
+<!--
+        
         <footer class="footer">
 
             <h1 id="footer-text">Footer</h1>
@@ -99,12 +99,19 @@
         </footer>
 -->
 
+
     </div>
+
+    <script>
+    </script>
+
+
 
 </body>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script src="assets/js/app.js"></script>
+
+    <script src="assets/js/app.js"></script>
 
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 

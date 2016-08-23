@@ -10,7 +10,7 @@
     <link href="assets/css/style.css" rel="stylesheet" type="text/css">
     
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAdC7G5MC9G8uxPUYabGBD93xL-lyzRu54&callback=initMap"></script>
-    
+
     <script src="https://www.gstatic.com/firebasejs/3.2.1/firebase.js"></script>
 
 </head>
@@ -33,7 +33,7 @@
             <div class="col-sm-8 col-sm-offset-2 ingredient-search">
                 <div id="custom-search-input">
                     <div class="input-group col-md-12">
-                        <input type="text" class="form-control input-lg text-value input-text" placeholder="Search Ingredient Nearby">
+                        <input class="typeahead form-control input-lg text-value input-text" type="text" placeholder="Search Ingredient Nearby">
                         <span class="input-group-btn">
                         <button class="btn btn-info btn-lg ingredient-button" type="button">
                         
@@ -102,17 +102,14 @@
 
     </div>
 
-    <script>
-    </script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="assets/js/typeahead.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-
+<script src="assets/js/app.js"></script>
 
 </body>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 
-    <script src="assets/js/app.js"></script>
-
-<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 </html>

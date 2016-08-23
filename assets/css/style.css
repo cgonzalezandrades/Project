@@ -122,3 +122,8 @@ background-color: white;
 
     
 }
+.tt-menu {
+    background-color: white;
+    padding: 10px 10px;
+    width: inherit;
+};

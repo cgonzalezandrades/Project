@@ -18,6 +18,9 @@ $("#get-product-text").on('click', function () {
 
     if (!mapDisplayed) {
         document.getElementById('map').style.display = "block";
+        
+//    console.log('inside');
+//        document.getElementsByClassName('new-map').style.display = "block";
 
         initMap();
         mapDisplayed = true;
@@ -26,6 +29,18 @@ $("#get-product-text").on('click', function () {
         return;
     }
 
+});
+
+$(".ingredient-button").on('click', function () {
+    
+    $('.add-product-col').hide();
+    $('.get-product-col').hide();
+    
+    document.getElementsByClassName('new-map').style.display = "block";
+    
+     initMap();
+    
+    
 });
 
 
@@ -124,31 +139,6 @@ function codeAddress() {
     return false;
 }
 
-$('.ingredient-button').on('click',function(){
-    
-     console.log($('.input-text').val());
-   
-    $('.add-product-col').hide();
-    $('.get-product-col').hide();
-   
-    var newDiv = $('<div>');
-    newDiv.addClass('col-sm-8 col-sm-offset-2 newDiv').html(initMap());
-    
-
-    
-    $('.button-row').append(newDiv);
-    
-    $('.newDiv').append(initMap());
-    
-   
-    
-    console.log(newDiv);
-    
-    
-    
-    
-    
-})
         
                           
                            

@@ -39,82 +39,7 @@ function initMap() {
     .fail(function(err) {
         alert("API Geolocation error! \n\n"+err);
     });
-  //   var latlng = new google.maps.LatLng(28.495, -81.400);
-  //   var mapOptions = {
-  //       zoom: 10,
-  //       center: latlng,
-  //   };
-  //   var map = new google.maps.Map(document.getElementById('map'), mapOptions);
-  //   var centerMarker = new google.maps.Marker({
-  //           map: map,});
-  //   console.log(centerMarker)
-  //   // Try HTML5 geolocation.
-  //     if (navigator.geolocation) {
-  //   navigator.geolocation.getCurrentPosition(function(position) {
-  //     var pos = {
-  //       lat: position.coords.latitude,
-  //       lng: position.coords.longitude
-  //     };
 
-  //     centerMarker.setPosition(pos);
-      
-  //     map.setCenter(pos);
-  //   }, function() {
-  //     handleLocationError(true, centerMarker, map.getCenter());
-  //   });
-  // } else {
-  //   // Browser doesn't support Geolocation
-  //   handleLocationError(false, centerMarker, map.getCenter());
-  // }
-    
-    // database.ref().on("child_added", function (snapshot) {
-    //     //content for the info window when clicking on marker
-    //     var contentString = snapshot.val().ingredient;
-    //     //format of the image that replaces the standard google maps marker
-    //     var image = {url: (snapshot.val().imgURL),
-    //         scaledSize: new google.maps.Size(40,40),
-    //         origin: new google.maps.Point(0,0),
-    //         anchor: new google.maps.Point(0, 0),
-    //         };
-    //     //item location from firebase
-    //     var itemLocation = JSON.parse(snapshot.val().location);
-    //     var locationForDiv = "https://maps.googleapis.com/maps/api/geocode/json?latlng=" + itemLocation.lat + "," + itemLocation.lng + "&key=AIzaSyAdC7G5MC9G8uxPUYabGBD93xL-lyzRu54"
-
-    //     //Commenting out below, but leaving in code just in case we want to print ingredient information on the page.
-    //     // $.ajax({
-    //     //         url: locationForDiv,
-    //     //         method: 'GET'
-    //     //     })
-    //     //     .done(function (response) {
-    //     //         // var name = snapshot.val().name;
-    //     //         console.log(itemLocation);
-    //     //         // console.log(name);
-    //     //         console.log(contentString);
-    //     //         var itemLoc = response.results[0].address_components[2].short_name;
-    //     //         console.log(itemLoc);
-    //     //         var itemDiv = $('<div/>');
-    //     //         itemDiv.addClass('userInfo');
-    //     //         itemDiv.append("<span>" + name + "</span>");
-    //     //         itemDiv.append("<span>" + itemLoc + "</span>");
-    //     //         itemDiv.append("<span>" + contentString + "</span>");
-    //     //         $('#userInfo').append(itemDiv);
-    //     //     });
-    //     //creating info windo
-    //     var infowindow = new google.maps.InfoWindow({
-    //         content: contentString,
-    //     });
-    //     //place marker on the map
-    //     var marker = new google.maps.Marker({
-    //         position: itemLocation,
-    //         map: map,
-    //         icon: image,
-    //         title: 'Ingredients'
-    //     });
-    //     //open info window when clicking on the marker
-    //     marker.addListener('click', function () {
-    //         infowindow.open(map, marker);
-    //     });
-    // });
 }; //end of init map
 
 //function to record fields when the button is clicked
@@ -169,37 +94,6 @@ function codeAddress() {
         alert("You can not send Cross Domain AJAX requests : "+ errorThrown);
        }
       });
-//     geocoder.geocode({
-//         'address': address
-//     }, function (results, status) {
-//         console.log(results[0].geometry.location);
-       
-//         var location = JSON.stringify(results[0].geometry.location);
-       
-//         database.ref().push({
-//             location: location, // location determined by Geocoder
-//             // userLocation: address // this is the user input location
-// //            name: name,
-//             ingredient: ingredient,
-//             imgURL: imgURL,
-// //            email: email,
-//         });
-
-
-//         if (status == 'OK') {
-//             map.setCenter(results[0].geometry.location);
-//             var marker = new google.maps.Marker({
-//                 map: map,
-//                 position: results[0].geometry.location
-//             });
-
-//         } else {
-//             alert('Geocode was not successful for the following reason: ' + status);
-//         }
-        
-        
-        
-//     });
     
     return false;
 }; //end of codeaddress
@@ -280,14 +174,8 @@ function handleLocationError(browserHasGeolocation, centerMarker, pos) {
                         'Error: The Geolocation service failed.' :
                         'Error: Your browser doesn\'t support geolocation.');
 };
-// var apiGeolocationSuccess = function(position) {
-//     alert("API geolocation success!\n\nlat = " + position.coords.latitude + "\nlng = " + position.coords.longitude);
-// };
 
-// var tryAPIGeolocation = function() {
-
-// };
-// tryAPIGeolocation()
+//function after map is initiated to display current availalble ingredients
 apiGeolocationSuccess = function(position) {
     var pos = {
         lat: position.coords.latitude,
@@ -318,25 +206,6 @@ apiGeolocationSuccess = function(position) {
         var itemLocation = JSON.parse(snapshot.val().location);
         var locationForDiv = "https://maps.googleapis.com/maps/api/geocode/json?latlng=" + itemLocation.lat + "," + itemLocation.lng + "&key=AIzaSyAdC7G5MC9G8uxPUYabGBD93xL-lyzRu54"
 
-        //Commenting out below, but leaving in code just in case we want to print ingredient information on the page.
-        // $.ajax({
-        //         url: locationForDiv,
-        //         method: 'GET'
-        //     })
-        //     .done(function (response) {
-        //         // var name = snapshot.val().name;
-        //         console.log(itemLocation);
-        //         // console.log(name);
-        //         console.log(contentString);
-        //         var itemLoc = response.results[0].address_components[2].short_name;
-        //         console.log(itemLoc);
-        //         var itemDiv = $('<div/>');
-        //         itemDiv.addClass('userInfo');
-        //         itemDiv.append("<span>" + name + "</span>");
-        //         itemDiv.append("<span>" + itemLoc + "</span>");
-        //         itemDiv.append("<span>" + contentString + "</span>");
-        //         $('#userInfo').append(itemDiv);
-        //     });
         //creating info windo
         var infowindow = new google.maps.InfoWindow({
             content: contentString,

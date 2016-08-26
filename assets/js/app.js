@@ -51,7 +51,7 @@ function initMap() {
         lng: position.coords.longitude
       };
 
-      centerMarker.setPosition(pos);
+      center.setPosition(pos);
       
       map.setCenter(pos);
     }, function() {

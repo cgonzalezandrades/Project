@@ -9,7 +9,7 @@
 
     <link href="assets/css/style.css" rel="stylesheet" type="text/css">
 
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAdC7G5MC9G8uxPUYabGBD93xL-lyzRu54&callback=initMap"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDPANM_Lp4yJ2jWqr-MPK4pAT8HU5VQizA&callback=initMap"></script>
 
     <script src="https://www.gstatic.com/firebasejs/3.2.1/firebase.js"></script>
 
@@ -22,136 +22,177 @@
 
 <body>
 
-    <div class="container">
-
-        <div class="title">
-            <h1>Share it !</h1>
-
-        </div>
-
-        <div class="row"></div>
-        <div class="intro col-sm-8 col-sm-offset-2">
-            <h1>Ready to Share ?</h1><span id="about-text">Food is any substance[1] consumed to provide nutritional support for the body. It is usually of plant or animal origin, and contains essential nutrients, such as fats, proteins, vitamins, or minerals. The substance is ingested by an organism and assimilated by the organism's cells to provide energy, maintain life, or stimulate growth.</span>
-        </div>
-    </div>
-
-    <div class="row new-map"></div>
-
-    <div class="row button-row ">
-
-        <div class="col-sm-6 col-sm-offset-3 ingredient-search">
-            <div id="custom-search-input">
-                <div class="input-group col-md-12">
-                    <input type="text" class="typeahead form-control input-lg text-value input-text" placeholder="Search Ingredient Nearby">
-
-                    <span class="input-group-btn">
-                        <button class="btn btn-info btn-lg ingredient-button " onclick="codeAddress()" type="button">
-
-                        
-                            <i class="glyphicon glyphicon-search"></i>
-                        </button>
-                        
-                    </span>
-                </div>
-
-            </div>
-
-        </div>
-
-        <div class="add-product-col col-sm-6 col-sm-offset-3">
-
-            <h1 id="add-product-text" type="button" data-toggle="collapse" data-target="#user-form">Add Ingredient</h1>
 
 
-            <div class="panel panel-default collapse " id="user-form">
-
-                <div class="panel-heading"></div>
-
-                <div class="panel-body">
-
-                    <form role="form">
-
-                        <div class="form-group">
-                            <label for="text">Ingredient</label>
-                            <input type="text" class="form-control" id="ingredient">
-                        </div>
-                        <div class="form-group">
-                            <label for="text">Location</label>
-                            <input type="text" class="form-control" id="location">
-                        </div>
-
-
-                        <button type="button" class="btn btn-default" id="submitMe" onclick="codeAddress()">Submit</button>
-                    </form>
-
-                </div>
-            </div>
-
-        </div>
-
-        <div class="get-product-col col-sm-6 col-sm-offset-3">
-
-            <h1 id="get-product-text" type="button" data-toggle="collapse" data-target="#map">Get Ingredient</h1>
-
-            <div id="map" class="collapse">
-
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed deiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-            </div>
-
-        </div>
-
-
-
+    <div class="container-fluid">
         <div class="row">
-            <div class="social col-sm-6 col-xs-offset-3">
+            <div class="col-xs-4 col-xs-offset-8" id="main">
 
-                <div class="social col-xs-3 col-xs-offset-2">
-                    <img src="assets/images/Facebook.png" class="img-responsive" width="50" height="50">
-                </div>
 
-                <div class="social col-xs-3">
-                    <img src="assets/images/instagram.png" class="img-responsive" width="81" height="54"></div>
 
-                <div class="social col-xs-3">
+                <nav class="nav-bar">
 
-                    <img src="assets/images/twitter.png" class="img-responsive" width="81" height="54">
+                    <a href="#" class=" btn btn-nav">
+                                Home
+                            </a>
 
-                </div>
+                    <a href="#" class=" btn btn-nav">
+                                About
+                            </a>
 
+
+
+                    <div class="btn-group " role="group">
+                        <a class="btn btn-nav dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Login
+                        </a>
+
+
+<!--                        <div class="modal-content">-->
+                            <div class="dropdown-menu">
+                                <li><a href="#">Sign up</a></li>
+                                <li><a href="#">Login</a></li>
+                            </div>
+<!--                        </div>-->
+
+                    </div>
+
+                </nav>
             </div>
-        </div>
 
 
-
-
-
-
-
-    </div>
-
-    </div>
-
-    <!--
-        
-        <footer class="footer">
-
-            <h1 id="footer-text">Footer</h1>
-
-        </footer>
+<!--
+            Modal content
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="close">×</span>
+                    <h2>Modal Header</h2>
+                </div>
+                <div class="modal-body">
+                    <p>Some text in the Modal Body</p>
+                    <p>Some other text...</p>
+                </div>
+                <div class="modal-footer">
+                    <h3>Modal Footer</h3>
+                </div>
+            </div>
 -->
 
+            <div class="title">
+                <h1>Share it !</h1>
 
-    </div>
+            </div>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script src="assets/js/typeahead.js"></script>
-<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+            <div class="row"></div>
+            <div class="intro col-xs-6 col-xs-offset-3">
+                <h1>Ready to Share ?</h1><span id="about-text">Food is any substance consumed to provide nutritional support for the body. It is usually of plant or animal origin, and contains essential nutrients, such as fats, proteins, vitamins, or minerals. The substance is ingested by an organism and assimilated by the organism's cells to provide energy, maintain life, or stimulate growth.</span>
+            </div>
 
-<script src="assets/js/app.js"></script>
+
+            <div class="row new-map"></div>
+
+            <div class="row button-row ">
+
+                <div class="col-xs-6 col-xs-offset-3 ingredient-search">
+
+                    <div id="custom-search-input">
+                        <div class="input-group col-xs-12">
+                            <input type="text" class="typeahead form-control input-lg text-value input-text" placeholder="Search Ingredient Nearby">
+                            </span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="add-product-col col-xs-6 col-xs-offset-3">
+
+                    <h1 id="add-product-text" type="button" data-toggle="collapse" data-target="#user-form">Add Ingredient</h1>
+
+
+                    <div class="panel panel-default collapse " id="user-form">
+
+                        <div class="panel-heading"></div>
+
+                        <div class="panel-body">
+
+                            <form id= "forIng" role="form">
+
+                                <div class="form-group">
+                                    <label for="text">Ingredient</label>
+                                    <input type="text" class="form-control" id="ingredient">
+                                </div>
+                                <div class="form-group">
+                                    <label for="text">Location</label>
+                                    <input type="text" class="form-control" id="location">
+                                </div>
+                                <div class="form-group">
+                                    <label for="text">Email</label>
+                                    <input type="email" name="email" class="form-control" id="Email">
+                                </div>
+
+
+                                <button type="button" class="btn btn-default" onclick="codeAddress()">Submit</button>
+                            </form>
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="get-product-col col-xs-6 col-xs-offset-3">
+
+                    <h1 id="get-product-text" type="button" data-toggle="collapse" data-target="#map">Get Ingredient</h1>
+
+                    <div id="map" class="collapse">
+
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed deiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    </div>
+
+                </div>
+
+
+
+                <div class="row">
+                    <div class="social col-xs-6 col-xs-offset-3">
+
+                        <div class="social col-xs-3 col-xs-offset-2">
+                            <img src="assets/images/Facebook.png" class="img-responsive" width="50" height="50">
+                        </div>
+
+                        <div class="social col-xs-3">
+                            <img src="assets/images/instagram.png" class="img-responsive" width="81" height="54"></div>
+
+                        <div class="social col-xs-3">
+
+                            <img src="assets/images/twitter.png" class="img-responsive" width="81" height="54">
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-fluid">
+
+
+            <footer class="footer" id="footer-text">
+
+                ShareIt &copy;
+
+            </footer>
+
+        </div>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+        <script src="assets/js/typeahead.js"></script>
+
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+        <script src="assets/js/app.js"></script>
 
 </body>
-
-
-
 
 </html>
